@@ -1,0 +1,379 @@
+.chat-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+.hero,
+.lookup-card,
+.chat-window {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(17, 27, 33, 0.12);
+}
+
+.hero {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 15;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #075e54;
+  color: #e9edef;
+  backdrop-filter: blur(12px);
+}
+
+.hero h1,
+.lookup-card h2 {
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: 1.1rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero small {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: rgba(233, 237, 239, 0.82);
+}
+
+.lawyer-link {
+  color: #e9edef;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.lookup-card {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #ffffff;
+}
+
+.lookup-card p {
+  margin: 0.5rem 0 0;
+  color: #667781;
+}
+
+.lookup-modal {
+  width: min(560px, calc(100vw - 1.5rem));
+}
+
+.lookup-form,
+.chat-input {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.lookup-form {
+  max-width: 460px;
+}
+
+.lookup-form input,
+.chat-input input {
+  flex: 1;
+  border: 1px solid #d1d7db;
+  border-radius: 999px;
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #111b21;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lookup-form input:focus,
+.chat-input input:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+.lookup-form button,
+.chat-input button,
+.selection-button,
+.ghost-button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.lookup-form button,
+.chat-input button {
+  background: #25d366;
+  color: #111b21;
+  font-weight: 600;
+  padding: 0 1.4rem;
+}
+
+.lookup-form button:disabled,
+.chat-input button:disabled,
+.selection-button:disabled,
+.ghost-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lookup-form button:not(:disabled):hover,
+.chat-input button:not(:disabled):hover,
+.selection-button:not(:disabled):hover,
+.ghost-button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.chat-window {
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #efeae2;
+}
+
+.chat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #d8dbdf;
+  background: #f0f2f5;
+  color: #54656f;
+}
+
+.ghost-button {
+  background: #ffffff;
+  border: 1px solid #d1d7db;
+  color: #54656f;
+  padding: 0.6rem 1rem;
+}
+
+.process-banner {
+  margin: 1rem 1.5rem 0;
+  padding: 0.9rem 1rem;
+  background: #d9fdd3;
+  color: #111b21;
+  border-radius: 16px;
+  box-shadow: 0 1px 1px rgba(17, 27, 33, 0.08);
+}
+
+.message-list {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  background:
+    linear-gradient(rgba(239, 234, 226, 0.92), rgba(239, 234, 226, 0.92)),
+    radial-gradient(circle at top left, rgba(18, 140, 126, 0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(37, 211, 102, 0.06), transparent 28%);
+}
+
+.message {
+  display: flex;
+}
+
+.message.assistant {
+  justify-content: flex-start;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: min(85%, 640px);
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px rgba(17, 27, 33, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.assistant .bubble {
+  background: #ffffff;
+  color: #111b21;
+  border-bottom-left-radius: 4px;
+}
+
+.user .bubble {
+  background: #d9fdd3;
+  color: #111b21;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble p {
+  margin: 0;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.markdown {
+  white-space: normal;
+}
+
+.markdown> :first-child {
+  margin-top: 0;
+}
+
+.markdown> :last-child {
+  margin-bottom: 0;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown blockquote {
+  margin: 0 0 0.75rem;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.25rem;
+}
+
+.markdown li+li {
+  margin-top: 0.25rem;
+}
+
+.markdown strong {
+  font-weight: 700;
+}
+
+.markdown code {
+  font-family: Consolas, 'Courier New', monospace;
+  background: rgba(17, 27, 33, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
+
+.user .markdown code {
+  background: rgba(17, 27, 33, 0.08);
+}
+
+.captcha-image {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 14px;
+  border: 1px solid #d1d7db;
+  background: #fff;
+  padding: 0.5rem;
+}
+
+.selection-panel {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #d8dbdf;
+}
+
+.selection-panel p {
+  margin: 0 0 1rem;
+  color: #54656f;
+  font-weight: 600;
+}
+
+.selection-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.selection-button {
+  background: #fff;
+  border: 1px solid #d8dbdf;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.selection-button span {
+  color: #128c7e;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.selection-button strong {
+  color: #111b21;
+  line-height: 1.4;
+}
+
+.chat-input {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid #d8dbdf;
+  background: #f0f2f5;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background: rgba(17, 27, 33, 0.58);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 860px) {
+
+  .hero,
+  .chat-toolbar,
+  .chat-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lookup-form {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-page {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .bubble {
+    max-width: 100%;
+  }
+
+  .lookup-form,
+  .chat-input {
+    flex-direction: column;
+  }
+
+  .hero {
+    top: 0.5rem;
+  }
+
+  .lookup-form button,
+  .chat-input button {
+    min-height: 48px;
+    padding: 0.9rem 1.2rem;
+  }
+}

@@ -1,0 +1,277 @@
+.lawyer-page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-card,
+.auth-card,
+.panel,
+.info-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card {
+  padding: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.hero-card h1,
+.panel h2 {
+  margin: 0;
+}
+
+.hero-card p,
+.panel p,
+.info-card p,
+.client-item p,
+.validation-note p {
+  margin: 0.45rem 0 0;
+  color: #475569;
+}
+
+.badge {
+  display: inline-flex;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.auth-card,
+.panel {
+  padding: 1.5rem;
+}
+
+.auth-card {
+  max-width: 520px;
+}
+
+.auth-toggle {
+  display: inline-flex;
+  background: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  color: #334155;
+}
+
+.tab-button.active {
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.auth-form,
+.client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form label,
+.client-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.auth-form input,
+.client-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 0.95rem 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus,
+.client-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+button {
+  font: inherit;
+}
+
+.auth-form button,
+.client-form button,
+.ghost-button,
+.danger-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.auth-form button,
+.client-form button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.auth-form button:disabled,
+.client-form button:disabled,
+.ghost-button:disabled,
+.danger-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-form button:not(:disabled):hover,
+.client-form button:not(:disabled):hover,
+.ghost-button:not(:disabled):hover,
+.danger-button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.danger-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.feedback {
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+}
+
+.feedback.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.feedback.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card {
+  padding: 1.3rem 1.4rem;
+}
+
+.info-label {
+  display: block;
+  color: #64748b;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.info-card strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.45rem;
+}
+
+.content-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.panel-header {
+  margin-bottom: 1rem;
+}
+
+.form-actions,
+.client-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.client-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.empty-state {
+  padding: 1rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.validation-note {
+  border: 1px dashed #93c5fd;
+  background: #eff6ff;
+  padding: 1rem;
+  border-radius: 18px;
+}
+
+.validation-note strong {
+  color: #1e3a8a;
+}
+
+@media (max-width: 980px) {
+  .dashboard-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .lawyer-page {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .hero-card,
+  .client-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions,
+  .client-actions {
+    flex-direction: column;
+  }
+}
